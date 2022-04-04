@@ -1,0 +1,36 @@
+<div class="title">
+    <div style="width: 70%;">
+        <h1>ÜRÜN LİSTESİ</h1>
+    </div>
+    <div style="width: 30%; text-align: right;">
+        <a href="#" title="Filtre"><i class="fa fa-filter"></i></a>
+        <a href="#" title="Ürün Ekle"><i class="fa fa-plus"></i></a>
+    </div>
+</div>
+<div class="tableContent">
+    <dx-data-grid id="gridProducts" [dataSource]="productDataSource" [showRowLines]="true"
+        [columnAutoWidth]="true" [hoverStateEnabled]="true" (onExporting)="onExporting($event)">
+        <dxo-load-panel text="Yükleniyor..." width="150" height="75" shading="true"></dxo-load-panel>
+        <dxo-remote-operations [paging]="true"></dxo-remote-operations>
+        <dxo-paging [pageSize]="20"></dxo-paging>
+        <dxo-pager [showPageSizeSelector]="true" [allowedPageSizes]="[20, 40, 60, 80, 100]"
+            [showNavigationButtons]="true" [showInfo]="true" infoText="Toplam Kayıt: {2}"></dxo-pager>
+        <dxi-column dataField="Id" dataType="number" alignment="left" [width]="100" cellTemplate="idCellTemplate">
+        </dxi-column>
+        <dxi-column dataField="Pno" dataType="string"></dxi-column>
+        <dxi-column caption='Seri No' dataField="SerialNo" dataType="string"></dxi-column>
+        <dxi-column caption='Kategori' dataField="CategoryName" dataType="string"></dxi-column>
+        <dxi-column caption='Marka' dataField="MarkName" dataType="string"></dxi-column>
+        <dxi-column caption='Model' dataField="ModelName" dataType="string"></dxi-column>
+        <dxi-column caption='Üretim Yılı' dataField="ManufactureYear" dataType="number" [width]="150" alignment="left">
+        </dxi-column>
+        <dxi-column type="buttons" [width]="110" alignment="left">
+            <dxi-button name="edit" icon="edit" [visible]="true"></dxi-button>
+            <dxi-button name="delete" icon="trash" [visible]="true" [onClick]="deleteItem"></dxi-button>
+        </dxi-column>
+
+        <div *dxTemplate="let data of 'idCellTemplate'">
+            <a href="/products/detail/{{data.value}}" target="_blank">{{data.value}}</a>
+        </div>
+    </dx-data-grid>
+</div>

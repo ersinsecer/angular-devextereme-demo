@@ -1,0 +1,106 @@
+@import url("//fonts.googleapis.com/css?family=Roboto:400,400i,500,500i,700,700i,900&display=swqap");
+@import url("//fonts.googleapis.com/css?family=Open+Sans:400,400i,600,600i,700,700i,800&display=swap");
+@import url("../node_modules/font-awesome/css/font-awesome.css");
+body {
+  height: 100%;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+}
+
+/* ::-webkit-scrollbar {
+  width: 5px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #70bcff;
+} */
+
+.spacer {
+  flex: 1;
+}
+
+.height100 {
+  height: 100% !important;
+}
+
+.navBar {
+  height: 7%;
+  max-height: 50px;
+  display: flex;
+  align-items: center;
+  background-color: #2b3643;
+  color: white;
+  font-weight: 600;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+.navBar span {
+  margin: 0 16px;
+}
+
+.page-content {
+  height: 93%;
+  padding-left: 20px;
+  padding-right: 5px;
+  position: relative;
+  top: 0;
+  left: 0;
+}
+
+.title {
+  height: 8%;
+  display: flex;
+  align-items: center;    
+  padding-right: 5px;
+}
+
+.title h1 {
+  font-size: 14px;
+  font-family: "Roboto";
+  font-weight: 400;
+  color: black;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.title a {
+  font-size: 14px;
+  color: #2c3e50;
+  border: 1px solid #e6e6e6;
+  height: 35px;
+  width: 35px;
+  border-radius: 500px;
+  display: inline-block;
+  margin-left: 10px;
+  transition: all 0.3s linear;
+}
+
+.title a i {
+  padding: 10px;
+  font-size: 14px;
+}
+
+.tableContent {
+  height: 92%;
+  position: relative;
+  display: flex;
+}
+
+.dx-datagrid-rowsview .dx-datagrid-content {
+  height: 100%;
+  overflow: hidden;
+  overflow-x: auto;
+  overflow-y: auto;
+}
+
+.dx-datagrid-headers {
+  color: grey;
+  font-weight: bold;
+  background-color: #f9f9f9;
+}
